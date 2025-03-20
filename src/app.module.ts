@@ -4,10 +4,10 @@ import { AppService } from './app.service';
 import { TaskController } from './task/task.controller';
 import { TaskService } from './task/task.service';
 import { TaskModule } from './task/task.module';
-import { v4 as uuidv4 } from 'uuid'
+import { DatabaseModule } from './config/database.module';
 
 @Module({
-  imports: [TaskModule],
+  imports: [TaskModule, DatabaseModule],
   controllers: [AppController, TaskController],
   providers: [AppService, TaskService],
 })
